@@ -16,7 +16,7 @@
 			background-color: teal;
 			font-size: 300%;
 			text-align: center;
-			display: block;
+			display: box;
 			position: absolute;
 			top: 100px;
 			left: 0px;
@@ -30,6 +30,7 @@
 
 	<!-- BEGIN JAVASCRIPT -->
 	<script>
+		/*globals box */
 		(function(){
 			'use strict'
 			/* global jQuery */
@@ -48,32 +49,41 @@ position = 0;
 points = 0;
 speed = 10;
 direction = 1;
-box.css('left', position);      // moves the box to the x-coordinate of <position> 
+
+box.css('left', position);      // set the 'left' CSS property of the box to the new value of position 
 box.text(points);               // changes the text of the box to display the value of <points>
 			
 			function update() {
-	};position += speed;    // increment position by speed on every update
+	 position += speed * direction;    // increment position by speed on every update
     console.log("new position: " + position);
     
-
+    if(position > boardWidth) {
+        console.log("Right Wall Hit");
+        direction = -1;
+        console.log(direction);
+    }
+        if(position > boardWidth)  { 
+    box.css('left', position);      // set the 'left' CSS property of the box to the new value of position
+}      }
+			
 			
 			function handleBoxClick() {
-				// TODO 4 / 5
-				
-			points += 1;           // increase the point total
+				// TODO 4 / 5	
+	points += 1;           // increase the point total
     box.text(points);      // update the new points total displayed by the box
     position = 0;         // reset the position of the box to 0
-    speed += 4;    // increase the speed of the box on every click
+    speed += 3;    // increase the speed of the box on every click
 
 
 			//this executes the update function code every 50 milliseconds
 			setInterval(update, 50);
-			// this executes the handleBoxClick function code every time the box is clicked on
-			box.on('click', handleBoxClick);
+			
+			box.on('click', handleBoxClick);{
 		points += 1;           // increase the point total
     box.text(points);      // update the new points total displayed by the box
-  
-		})();
-	</script>
+    position = 0;         // reset the position of the box to 0
+    speed += 3;    // increase the speed of the box on every click
+   }();
+	 <script>
 </body>
 </html>

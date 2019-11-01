@@ -1,4 +1,4 @@
-(function (window) {
+ (function (window) {
     'use strict';
     window.opspark = window.opspark || {};
     window.opspark.collectable = window.opspark.collectable || {};
@@ -23,7 +23,10 @@
         cannon.create.onTop(450);
         cannon.create.onBottom(612);
         cannon.create.onLeft(430);
-        cannon.create.onRight(555);
+        cannon.create.onRight(420, 5000);
+        cannon.create.onRight(500);
+        cannon.create.onRight(270);
+        cannon.create.onRight(394);
         
         // ALL YOUR CODE GOES ABOVE HERE ///////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////

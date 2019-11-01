@@ -34,7 +34,9 @@ var circles = [];	// variable to store all circles in one Array
 
         // TODO 3 / 7 : Call the drawCircle function 
 
-
+        for(var conter = 0; counter < 200; counter++){
+        drawCircle();
+        }
     
         view.addChild(fps);
         app.addUpdateable(fps);
@@ -47,17 +49,17 @@ var circles = [];	// variable to store all circles in one Array
                 circle.x = 0;
             } 
             // TODO 5a) if the circle has gone past of the LEFT side of the screen then place it on the RIGHT
-            else if ( / * Fill me in! * / ) {
-                
+            else if (  cirlce.x < 0 ) {
+                 cirlce.x = canvas.width;
             } 
 
             // TODO 5b) if the circle has gone past of the TOP side of the screen then place it on the BOTTOM
-            if ( / * Fill me in! * / ) {
-                
+            if ( circle.y < 0) {
+                 circle.x = canvas.height;
             }
             // TODO 5c) if the circle has gone past of the BOTTOM side of the screen then place it OFF-SCREEN TOP
-            else if ( / * Fill me in! * / ) {
-            
+            else if ( circle.y > canvas.height ) {
+                       circle.y = 0;
             }
             // YOUR TODO 5 CODE ENDS HERE //////////////////////////
         }
